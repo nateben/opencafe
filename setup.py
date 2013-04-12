@@ -17,7 +17,6 @@ limitations under the License.
 import os
 import sys
 import pwd
-import grp
 import cafe
 
 try:
@@ -104,7 +103,7 @@ else:
 
     ''' todo: This is MAC/Linux Only '''
     # get who really executed this
-    sudo_user = os.getenv("SUDO_USER")
+    sudo_user = os.getenv("USER")
     uid = pwd.getpwnam(sudo_user).pw_uid
     gid = pwd.getpwnam(sudo_user).pw_gid
     
